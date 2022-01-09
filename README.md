@@ -25,6 +25,30 @@ All the elements of arr2 are distinct.
 Each arr2[i] is in arr1.
 
 ```
+#### Sol 1:
+```
+# count frequencey of arr1
+# append element from arr2 x how many times x occur in arr1
+# apped other elements from arr1 which are not exist in arr2 in sorted list
+
+
+from collections import Counter
+
+def relativeSortArray(arr1, arr2):
+    res = []
+    
+    fq = Counter(arr1)
+    for i in arr2:
+        res.extend([i]*fq[i])
+        fq[i]=0
+    ren=list(sorted(filter(lambda x: fq[x] != 0, fq.keys())))
+    for i in ren:
+        res.extend([i]*fq[i])
+    return res
+    
+print(relativeSortArray(arr1 = [28,6,22,8,44,17], arr2 = [22,28,8,6]))
+```
+
 ### Q2
 ```
 You have n dice and each die has k faces numbered from 1 to k.
@@ -60,5 +84,34 @@ Constraints:
     1 <= n, k <= 30
     1 <= target <= 1000
 
+```
 
+#### Sol2:
+```
+def numRollsToTarget(n,k,target):        
+        modulo = 10**9 + 7
+        cache = {}
+        
+        def numRollsToTargetHelper(dd, tt):
+            if cache.get((dd,tt)) != None:
+                return cache[(dd,tt)]
+            nonlocal k
+            if dd == 1:
+                if tt <= k:
+                    return 1
+                else:
+                    return 0
+            
+            ret = 0
+            for i in range(1, k+1):
+                if tt - i > 0:
+                    ret += numRollsToTargetHelper(dd-1, tt-i)
+            cache[(dd,tt)] = ret
+            return ret
+        
+        ret = numRollsToTargetHelper(n, target)
+        return ret % modulo
+    
+    
+print(numRollsToTarget(2,6,7))
 ```
