@@ -5,7 +5,6 @@ Given two arrays arr1 and arr2, the elements of arr2 are distinct, and all eleme
 
 Sort the elements of arr1 such that the relative ordering of items in arr1 are the same as in arr2. Elements that do not appear in arr2 should be placed at the end of arr1 in ascending order.
 
- 
 
 Example 1:
 
@@ -25,6 +24,7 @@ All the elements of arr2 are distinct.
 Each arr2[i] is in arr1.
 
 ```
+***arr2 অনুযায়ি arr1 কে শর্ট করতে হবে। arr1 এর অবশিষ্ট উপাদান কে শর্ট করে শেষে যোগ কওরে দিতে ***
 #### Sol 1:
 ```
 # count frequencey of arr1
@@ -85,6 +85,7 @@ Constraints:
     1 <= target <= 1000
 
 ```
+******
 
 #### Sol2:
 ```
