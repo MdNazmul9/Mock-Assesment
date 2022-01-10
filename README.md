@@ -24,7 +24,9 @@ All the elements of arr2 are distinct.
 Each arr2[i] is in arr1.
 
 ```
-***arr2 অনুযায়ি arr1 কে শর্ট করতে হবে। arr1 এর অবশিষ্ট উপাদান কে শর্ট করে শেষে যোগ কওরে দিতে ***
+
+***arr2 অনুযায়ি arr1 কে শর্ট করতে হবে। arr1 এর অবশিষ্ট উপাদান কে শর্ট করে শেষে যোগ কওরে দিতে***
+
 #### Sol 1:
 ```
 # count frequencey of arr1
